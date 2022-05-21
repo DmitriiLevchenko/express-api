@@ -1,0 +1,13 @@
+{
+	"editor.codeActionsOnSave": {},
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescriptreact",
+		"typescript"
+	],
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.tabSize": 2,
+	"prettier.useTabs": true
+}
