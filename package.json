@@ -2,15 +2,18 @@
   "name": "express",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "src/app.ts",
   "scripts": {
-    "build": "babel app.ts -d dist",
-    "start": "npm run build && nodemon dist/app.js"
+    "start": "nodemon src/app.ts",
+    "typeorm": "typeorm-ts-node-esm -d ./src/database/data-source.ts",
+    "typeorm:migrate": "npm run typeorm -- migration:generate ./src/database/migrations/migration",
+    "typeorm:run": "npm run typeorm migration:run"
   },
   "author": "Dmitry",
   "license": "ISC",
   "dependencies": {
     "babel-eslint": "^10.1.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
@@ -20,12 +23,17 @@
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",
     "@babel/plugin-transform-flow-strip-types": "^7.17.12",
+    "@babel/plugin-transform-runtime": "^7.18.0",
     "@babel/plugin-transform-typescript": "^7.18.1",
     "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/register": "^7.17.7",
+    "@babel/runtime": "^7.18.0",
     "@types/express": "^4.16.1",
     "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.3",
@@ -33,6 +41,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "nodemon": "^2.0.16",
+    "ts-node": "^10.8.0",
     "typescript": "^3.3.3"
   }
 }
