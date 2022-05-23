@@ -7,7 +7,7 @@
     "start": "nodemon src/app.ts",
     "typeorm": "typeorm-ts-node-esm -d ./src/database/data-source.ts",
     "typeorm:migrate": "npm run typeorm -- migration:generate ./src/database/migrations/migration",
-    "typeorm:run": "npm run typeorm migration:run"
+    "typeorm:migrate:run": "npm run typeorm migration:run"
   },
   "author": "Dmitry",
   "license": "ISC",
@@ -15,6 +15,10 @@
     "babel-eslint": "^10.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.6"

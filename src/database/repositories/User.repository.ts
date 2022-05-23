@@ -1,8 +1,8 @@
 import { DataSource } from "typeorm";
-import { User } from "../entities";
+import { UserEntity } from "../entities";
 
 const dataSource = new DataSource(null);
-export const UserRepository = dataSource.getRepository(User)
+export const UserRepository = dataSource.getRepository(UserEntity)
   .extend({
     findByName(firstName: string, lastName: string) {
       return this.createQueryBuilder("user")

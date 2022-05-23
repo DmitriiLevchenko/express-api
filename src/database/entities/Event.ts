@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
-export class Event {
+export class EventEntity {
   @PrimaryGeneratedColumn("uuid")
   id: string
 

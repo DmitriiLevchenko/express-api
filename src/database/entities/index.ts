@@ -1,7 +1,8 @@
-import { User } from "./User";
-import { Group } from "./Group";
-import { Event } from "./Event";
+import { UserEntity } from "./User";
+import { GroupEntity } from "./Group";
+import { EventEntity } from "./Event";
+import { TokenEntity } from "./Token";
 
 export {
-  User, Event, Group
+  UserEntity, EventEntity, GroupEntity, TokenEntity
 }

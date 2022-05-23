@@ -1,17 +1,17 @@
 import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm'
-import { User } from './User';
+import { UserEntity } from './User';
 
 @Entity()
-export class Group {
+export class GroupEntity {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column({ length: 100, nullable: false })
   name: string;
 
-  @ManyToMany(type => User, user => user.groups, {
+  @ManyToMany(type => UserEntity, user => user.groups, {
     cascade: true,
   })
   @JoinTable()
-  users: User[]
+  users: UserEntity[]
 }
