@@ -1,8 +1,10 @@
+import { Result, ValidationError } from "express-validator";
+
 export class ApiResHelper extends Error {
   public status_code: number
   public message: string
   public errors: Array<string>
-  constructor(status_code: number = 200, message: string = '', errors: Array<string> = []) {
+  constructor(status_code: number = 200, message: string = '', errors: Array<string> | Result<ValidationError> = null) {
     super(message)
   }
 

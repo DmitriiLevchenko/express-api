@@ -36,14 +36,14 @@ const jwtValidatorBuilder = (rols: Array<UserRole>) => {
   }
 }
 
-const jwtValidationAdmin = jwtValidatorBuilder([UserRole.ADMIN]);
+const jwtValidationAdminMiddleware = jwtValidatorBuilder([UserRole.ADMIN]);
 
-const jwtValidationUser = jwtValidatorBuilder([UserRole.ADMIN, UserRole.USER]);
+const jwtValidationUserMiddleware = jwtValidatorBuilder([UserRole.ADMIN, UserRole.USER]);
 
-const jwtValidationGhost = jwtValidatorBuilder([UserRole.ADMIN, UserRole.USER, UserRole.GHOST]);
+const jwtValidationGhostMiddleware = jwtValidatorBuilder([UserRole.ADMIN, UserRole.USER, UserRole.GHOST]);
 
 export {
-  jwtValidationAdmin,
-  jwtValidationGhost,
-  jwtValidationUser
+  jwtValidationAdminMiddleware,
+  jwtValidationGhostMiddleware,
+  jwtValidationUserMiddleware
 }

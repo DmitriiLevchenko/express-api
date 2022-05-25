@@ -1,9 +1,9 @@
-import { jwtValidationAdmin, jwtValidationGhost, jwtValidationUser } from './jwtValidator.middleware'
+import { jwtValidationAdminMiddleware, jwtValidationGhostMiddleware, jwtValidationUserMiddleware } from './jwtValidator.middleware'
 
 export {
-  jwtValidationAdmin,
-  jwtValidationGhost,
-  jwtValidationUser
+  jwtValidationAdminMiddleware,
+  jwtValidationGhostMiddleware,
+  jwtValidationUserMiddleware
 }
 
 

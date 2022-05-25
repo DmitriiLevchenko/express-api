@@ -4,4 +4,5 @@ export const init = () => {
   const router = Router()
   router.use('/auth', InitAuthRouter())
 
+  return router
 }

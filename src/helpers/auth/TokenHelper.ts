@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import { TokenRepository } from "../../database/repositories";
+import { lifeTimeConstants } from "../../common/constants/lifeTime.constant";
 
 
 dotenv.config();
@@ -8,10 +9,10 @@ class TokenHelper {
   generateTokens(payload: any) {
 
     const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_KEY_SALT, {
-      expiresIn: process.env.ACCESS_TOKEN_LIFE_TIME,
+      expiresIn: process.env.ACCESS_TOKEN_LIFE_TIME || lifeTimeConstants.ACCESS_TOKEN_LIFE_TIME,
     });
     const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_KEY_SALT, {
-      expiresIn: process.env.REFRESH_TOKEN_LIFE_TIME,
+      expiresIn: process.env.REFRESH_TOKEN_LIFE_TIME || lifeTimeConstants.REFRESH_TOKEN_LIFE_TIME,
     });
 
     return {
